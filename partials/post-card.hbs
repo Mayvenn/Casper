@@ -36,20 +36,12 @@
         <footer class="post-card-meta">
 
             <ul class="author-list">
-            {{#foreach authors}}
+            {{#foreach authors limit="1"}}
                 <li class="author-list-item">
 
-                    <div class="author-name-tooltip">
-                        {{name}}
-                    </div>
-
-                    {{#if profile_image}}
-                        <a href="{{url}}" class="static-avatar">
-                            <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-                        </a>
-                    {{else}}
-                        <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                    {{/if}}
+                    <a href="{{url}}" class="author-list-link">
+                     By {{name}}
+                    </a>
                 </li>
             {{/foreach}}
             </ul>

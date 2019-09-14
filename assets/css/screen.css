@@ -31,8 +31,36 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 @import "global.css";
 
+@font-face {
+	  font-family: Roboto;
+	  font-display: swap;
+	  src: url(https://d6w7wdcyyr51t.cloudfront.net/cdn/fonts/Roboto-Light-webfont.816d43bc.woff) format("woff");
+	  font-weight: 300;
+	  font-style: normal;
+	  font-stretch: normal
+}
+
+@font-face {
+	  font-family: Roboto;
+	  font-display: swap;
+	  src: url(https://d6w7wdcyyr51t.cloudfront.net/cdn/fonts/Roboto-Regular-webfont.3e5675c8.woff) format("woff");
+	  font-weight: 400;
+	  font-style: normal;
+	  font-stretch: normal
+}
+
+@font-face {
+	  font-family: Roboto;
+	  font-display: swap;
+	  src: url(https://d6w7wdcyyr51t.cloudfront.net/cdn/fonts/Roboto-Bold-webfont.8b18d65d.woff) format("woff");
+	  font-weight: 700;
+	  font-style: normal;
+	  font-stretch: normal
+}
+
 body {
-    background: #f4f8fb;
+    background: #fff;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif;
 }
 
 .img {
@@ -95,12 +123,10 @@ body {
     .home-template .post-feed,
     .tag-template .post-feed,
     .author-template .post-feed {
-        margin-top: -70px;
         padding-top: 0;
     }
     .home-template .site-nav {
         position: relative;
-        top: -70px;
     }
 }
 
@@ -112,9 +138,6 @@ body {
     position: relative;
     padding-top: 12px;
     padding-bottom: 12px;
-    color: #fff;
-    background: color(var(--darkgrey) l(-5%)) no-repeat center center;
-    background-size: cover;
 }
 
 .site-header:before {
@@ -126,7 +149,6 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.18);
 }
 
 .site-header:after {
@@ -139,7 +161,6 @@ body {
     z-index: 10;
     display: block;
     height: 80px;
-    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0));
 }
 
 .site-header.no-image:before,
@@ -196,24 +217,29 @@ body {
 .site-nav {
     position: relative;
     z-index: 300;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     overflow-y: hidden;
-    height: 40px;
     font-size: 1.2rem;
+    height: 72px;
 }
 
-.site-nav-left {
+.site-nav-top {
     display: flex;
-    align-items: center;
+    justify-content: center;
+}
+
+.site-nav-bottom {
+    display: flex;
+    justify-content: center;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    margin-right: 10px;
+    height: 90px;
+    margin-top: 10px;
     padding-bottom: 80px;
     letter-spacing: 0.4px;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
 
     -ms-overflow-scrolling: touch;
 }
@@ -227,11 +253,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 */
 
 .site-nav-logo {
-    flex-shrink: 0;
     display: block;
-    margin-right: 24px;
-    padding: 11px 0;
-    color: #fff;
+    padding: 5px 0;
     font-size: 1.7rem;
     line-height: 1em;
     font-weight: bold;
@@ -245,12 +268,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .site-nav-logo img {
     display: block;
     width: auto;
-    height: 21px;
+    height: 42px;
 }
 
 .nav {
     display: flex;
-    margin: 0 0 0 -12px;
+    margin: 0;
     padding: 0;
     list-style: none;
 }
@@ -266,20 +289,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: block;
     margin: 0;
     padding: 10px 12px;
-    color: #fff;
     opacity: 0.8;
 }
 
 .nav li a:hover {
     text-decoration: none;
     opacity: 1;
-}
-
-.site-nav-right {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    height: 40px;
 }
 
 .social-links {
@@ -361,13 +376,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     .site-header {
         padding-right: 0;
         padding-left: 0;
-    }
-    .site-nav-left {
-        margin-right: 0;
-        padding-left: 4vw;
-    }
-    .site-nav-right {
-        display: none;
     }
 }
 
@@ -451,14 +459,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     justify-content: space-between;
 }
 
-.post-card-excerpt {
-    font-family: Georgia, serif;
-}
-
 .post-card-meta {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     padding: 0 25px 25px;
 }
 
@@ -491,6 +495,10 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     flex-shrink: 0;
     margin: 0;
     padding: 0;
+}
+
+.author-list-link {
+    color: var(--midgrey);
 }
 
 .author-list-item:nth-child(1) {
@@ -675,13 +683,13 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-header {
     margin: 0 auto;
-    padding: 6vw 3vw 3vw;
+    padding: 3vw 3vw 3vw;
     max-width: 1040px;
     text-align: center;
 }
 @media (max-width: 500px) {
     .post-full-header {
-        padding: 14vw 3vw 10vw;
+        padding: 10vw 3vw 10vw;
     }
 }
 
@@ -696,7 +704,9 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-meta-date {
-    color: var(--blue);
+    color: var(--lavendar);
+    font-weight: 400;
+    margin-bottom: 4px;
 }
 
 .post-full-title {
@@ -710,7 +720,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 }
 
 .post-full-image {
-    margin: 0 -10vw -165px;
     background: var(--lightgrey) center center;
     border-radius: 5px;
     overflow: hidden;
@@ -718,7 +727,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-full-image img {
     width: 100%;
-    height: 800px;
     object-fit: cover;
 }
 
@@ -727,15 +735,6 @@ make sure this only happens on large viewports / desktop-ish devices.
         margin: 0 -4vw -100px;
         border-radius: 0;
     }
-    .post-full-image img {
-        height: 600px;
-    }
-}
-
-@media (max-width: 800px) {
-    .post-full-image img {
-        height: 400px;
-    }
 }
 
 .post-full-content {
@@ -743,7 +742,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     margin: 0 auto;
     padding: 70px 100px 0;
     min-height: 230px;
-    font-family: Georgia, serif;
     font-size: 2.2rem;
     line-height: 1.6em;
     background: #fff;
@@ -758,34 +756,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     .post-full-content {
         font-size: 1.9rem;
     }
-}
-
-.post-full-content:before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(-5deg);
-}
-
-.post-full-content:after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    right: -5px;
-    z-index: -1;
-    display: block;
-    width: 20px;
-    height: 200px;
-    background: rgba(39,44,49,0.15);
-    filter: blur(5px);
-    transform: rotate(5deg);
 }
 
 .no-image .post-full-content {
@@ -825,11 +795,11 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-content a {
     color: #000;
     word-break: break-word;
-    box-shadow: var(--blue) 0 -1px 0 inset;
+    box-shadow: var(--lavendar) 0 -1px 0 inset;
 }
 
 .post-full-content a:hover {
-    color: var(--blue);
+    color: var(--lavendar);
     text-decoration: none;
 }
 
@@ -900,7 +870,7 @@ Usage (In Ghost editor):
 .post-full-content blockquote {
     margin: 0 0 1.5em;
     padding: 0 1.5em;
-    border-left: #3eb0ef 3px solid;
+    border-left: var(--teal) 3px solid;
 }
 
 .post-full-content blockquote p {
@@ -985,7 +955,7 @@ Usage (In Ghost editor):
 .post-full-content h5,
 .post-full-content h6 {
     color: color(var(--darkgrey) l(-5%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	  font-family: Roboto, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif
 }
 
 .post-full-content h1 {
@@ -1037,8 +1007,7 @@ Usage (In Ghost editor):
     margin: 0.5em 0;
     padding: 1em 0 1.5em;
     border: 0;
-    color: var(--blue);
-    font-family: Georgia,serif;
+    color: var(--lavendar);
     font-size: 3.2rem;
     line-height: 1.35em;
     text-align: center;
@@ -1080,7 +1049,7 @@ Usage (In Ghost editor):
 }
 
 .footnote-backref {
-    color: var(--blue) !important;
+    color: var(--lavendar) !important;
     font-size: 1.2rem;
     font-weight: bold;
     text-decoration: none !important;
@@ -1098,7 +1067,6 @@ Usage (In Ghost editor):
     }
     .post-full-image {
         margin-bottom: 4vw;
-        height: 350px;
     }
     .post-full-content {
         padding: 0;
@@ -1118,7 +1086,7 @@ Usage (In Ghost editor):
     width: auto;
     border-spacing: 0;
     border-collapse: collapse;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	  font-family: Roboto, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif;
     font-size: 1.6rem;
     white-space: nowrap;
     vertical-align: top;
@@ -1237,10 +1205,10 @@ Usage (In Ghost editor):
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
+    color(var(--lavendar) whiteness(+7%)),
+    color(var(--lavendar) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--lavendar) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--lavendar) lightness(-4%) saturation(-10%))
     );
     border-radius: 5px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
@@ -1250,7 +1218,7 @@ Usage (In Ghost editor):
 
 .subscribe-form button:active,
 .subscribe-form button:focus {
-    background: color(var(--blue) lightness(-9%) saturation(-10%));
+    background: color(var(--lavendar) lightness(-9%) saturation(-10%));
 }
 
 @media (max-width: 650px) {
@@ -1341,8 +1309,8 @@ Usage (In Ghost editor):
 }
 
 .author-card-button:hover {
-    border-color: var(--blue);
-    color: var(--blue);
+    border-color: var(--lavendar);
+    color: var(--lavendar);
     text-decoration: none;
 }
 
@@ -1765,7 +1733,7 @@ Usage (In Ghost editor):
     width: 100%;
     height: 2px;
     border: none;
-    color: var(--blue);
+    color: var(--lavendar);
     background: transparent;
 
     appearance: none;
@@ -1776,11 +1744,11 @@ Usage (In Ghost editor):
 }
 
 .progress::-webkit-progress-value {
-    background-color: var(--blue);
+    background-color: var(--lavendar);
 }
 
 .progress::-moz-progress-bar {
-    background-color: var(--blue);
+    background-color: var(--lavendar);
 }
 
 .progress-container {
@@ -1797,7 +1765,7 @@ Usage (In Ghost editor):
     display: block;
     width: 50%;
     height: inherit;
-    background-color: var(--blue);
+    background-color: var(--lavendar);
 }
 
 @media (max-width: 900px) {
@@ -1844,11 +1812,6 @@ Usage (In Ghost editor):
     flex-direction: column;
     align-items: center;
     max-width: 920px;
-}
-
-.post-template .post-content > p:first-child {
-    font-size: 1.25em;
-    line-height: 1.5em;
 }
 
 .post-full-content .kg-image {
@@ -1960,7 +1923,7 @@ Usage (In Ghost editor):
 
 .post-full-content .kg-bookmark-container {
     display: flex;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	  font-family: Roboto, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif;
     color: var(--darkgrey);
     text-decoration: none;
     min-height: 148px;
@@ -1985,7 +1948,7 @@ Usage (In Ghost editor):
 }
 
 .post-full-content .kg-bookmark-container:hover .kg-bookmark-title {
-    color: var(--blue);
+    color: var(--lavendar);
 }
 
 .kg-bookmark-description {
@@ -2101,7 +2064,6 @@ Usage (In Ghost editor):
     justify-content: center;
     align-items: center;
     margin: 0 0 10px 0;
-    font-family: Georgia, serif;
     font-style: italic;
 }
 
@@ -2240,7 +2202,6 @@ Usage (In Ghost editor):
 .subscribe-overlay-description {
     margin: 0 auto 50px;
     max-width: 650px;
-    font-family: Georgia, serif;
     font-size: 3rem;
     line-height: 1.3em;
     font-weight: 300;
@@ -2294,10 +2255,10 @@ Usage (In Ghost editor):
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
     background: linear-gradient(
-    color(var(--blue) whiteness(+7%)),
-    color(var(--blue) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--blue) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--blue) lightness(-4%) saturation(-10%))
+    color(var(--lavendar) whiteness(+7%)),
+    color(var(--lavendar) lightness(-7%) saturation(-10%)) 60%,
+    color(var(--lavendar) lightness(-7%) saturation(-10%)) 90%,
+    color(var(--lavendar) lightness(-4%) saturation(-10%))
     );
     border-radius: 8px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
@@ -2307,7 +2268,7 @@ Usage (In Ghost editor):
 
 .subscribe-overlay button:active,
 .subscribe-overlay button:focus {
-    background: color(var(--blue) lightness(-9%) saturation(-10%));
+    background: color(var(--lavendar) lightness(-9%) saturation(-10%));
 }
 
 .subscribe-overlay-close {
@@ -2356,9 +2317,8 @@ Usage (In Ghost editor):
 .site-footer {
     position: relative;
     padding-top: 20px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     color: #fff;
-    background: color(var(--darkgrey) l(-15%));
 }
 
 .site-footer-content {
@@ -2366,16 +2326,12 @@ Usage (In Ghost editor):
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    color: rgba(255,255,255,0.7);
+    color: #777;
     font-size: 1.3rem;
 }
 
-.site-footer-content a {
-    color: rgba(255,255,255,0.7);
-}
-
 .site-footer-content a:hover {
-    color: rgba(255,255,255,1);
+    color: var(--lavendar);
     text-decoration: none;
 }
 
