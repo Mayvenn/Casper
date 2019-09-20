@@ -5,7 +5,9 @@
     {{#if profile_image}}
         <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
     {{else}}
-        <span class="avatar-wrapper">{{> "icons/avatar"}}</span>
+        <span class="avatar-wrapper">
+            <img src="{{asset "images/default_avatar.png"}}" />
+        </span>
     {{/if}}
     <section class="author-card-content">
         <h4 class="author-card-name"><a href="{{url}}">{{name}}</a></h4>

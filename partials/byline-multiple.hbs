@@ -14,7 +14,7 @@
                     {{#if profile_image}}
                         <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
                     {{else}}
-                        <div class="author-profile-image">{{> "icons/avatar"}}</div>
+                        <img src="{{asset "images/default_avatar.png"}}" />
                     {{/if}}
                     <h2>{{name}}</h2>
                 </div>
@@ -33,7 +33,9 @@
                     <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
                 </a>
             {{else}}
-                <a href="{{url}}" class="moving-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                <a href="{{url}}" class="moving-avatar author-profile-image">
+                    <img src="{{asset "images/default_avatar.png"}}" />
+                </a>
             {{/if}}
 
         </li>
