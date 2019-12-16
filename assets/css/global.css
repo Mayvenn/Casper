@@ -16,6 +16,7 @@
     --brown: #a3821a;
     --teal: #40cbac;
     --lavendar: #af9fc4;
+    --darkmode: color(var(--darkgrey) l(+2%));
 }
 
 /* Reset
@@ -284,6 +285,7 @@ body {
     overflow-x: hidden;
     font-family: Roboto,-apple-system,BlinkMacSystemFont,helvetica neue,helvetica,Ubuntu,segoe ui,arial,sans-serif;
     font-size: 1.5rem;
+    color: color(var(--midgrey) l(-30%));
     line-height: 1.6em;
     font-weight: 400;
     font-style: normal;
@@ -432,14 +434,14 @@ h5,
 h6 {
     margin-top: 0;
     line-height: 1.15;
-    font-weight: 700;
+    font-weight: 600;
     text-rendering: optimizeLegibility;
 }
 
 h1 {
     margin: 0 0 0.5em 0;
-    font-size: 5rem;
-    font-weight: 700;
+    font-size: 5.5rem;
+    font-weight: 600;
 }
 @media (max-width: 500px) {
     h1 {
@@ -449,7 +451,7 @@ h1 {
 
 h2 {
     margin: 1.5em 0 0.5em 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 @media (max-width: 500px) {
     h2 {
