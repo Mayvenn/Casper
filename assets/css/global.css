@@ -5,7 +5,7 @@
     /* Colours */
     --blue: #3eb0ef;
     --green: #a4d037;
-    --purple: #ad26b4;
+    --purple: #4427C1;
     --yellow: #fecd35;
     --red: #f05230;
     --darkgrey: #15171A;
@@ -14,8 +14,8 @@
     --whitegrey: #e5eff5;
     --pink: #fa3a57;
     --brown: #a3821a;
-    --teal: #40cbac;
-    --lavendar: #af9fc4;
+    --teal: #6BC8AD;
+    --lavendar: #DEDBE5;
     --darkmode: color(var(--darkgrey) l(+2%));
 }
 
@@ -283,11 +283,11 @@ html {
 }
 body {
     overflow-x: hidden;
-    font-family: Roboto,-apple-system,BlinkMacSystemFont,helvetica neue,helvetica,Ubuntu,segoe ui,arial,sans-serif;
+    font-family: ProximaNova,-apple-system,BlinkMacSystemFont,helvetica neue,helvetica,Ubuntu,segoe ui,arial,sans-serif;
     font-size: 1.5rem;
     color: color(var(--midgrey) l(-30%));
     line-height: 1.6em;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
@@ -300,7 +300,7 @@ body {
 
 ::selection {
     text-shadow: none;
-    background: color(var(--teal) lightness(+30%));
+    background: color(var(--lavendar) lightness(+30%));
 }
 
 hr {
@@ -378,7 +378,7 @@ dt {
     margin: 0 20px 0 0;
     width: 120px;
     color: var(--darkgrey);
-    font-weight: 500;
+    font-weight: 700;
     text-align: right;
 }
 
@@ -414,7 +414,7 @@ blockquote cite {
     font-weight: bold;
 }
 blockquote cite a {
-    font-weight: normal;
+    font-weight: 300;
 }
 
 a {
@@ -434,14 +434,14 @@ h5,
 h6 {
     margin-top: 0;
     line-height: 1.15;
-    font-weight: 600;
+    font-weight: 700;
     text-rendering: optimizeLegibility;
 }
 
 h1 {
     margin: 0 0 0.5em 0;
     font-size: 5.5rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 @media (max-width: 500px) {
     h1 {
@@ -462,7 +462,7 @@ h2 {
 h3 {
     margin: 1.5em 0 0.5em 0;
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 700;
 }
 @media (max-width: 500px) {
     h3 {
@@ -473,17 +473,17 @@ h3 {
 h4 {
     margin: 1.5em 0 0.5em 0;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 h5 {
     margin: 1.5em 0 0.5em 0;
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 h6 {
     margin: 1.5em 0 0.5em 0;
     font-size: 1.4rem;
-    font-weight: 500;
+    font-weight: 300;
 }

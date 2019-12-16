@@ -32,27 +32,27 @@ production stylesheet in assets/built/screen.css
 @import "global.css";
 
 @font-face {
-	  font-family: Roboto;
+	  font-family: ProximaNova;
 	  font-display: swap;
-	  src: url(https://d6w7wdcyyr51t.cloudfront.net/cdn/fonts/Roboto-Light-webfont.816d43bc.woff) format("woff");
+	  src: url(https://d6w7wdcyyr51t.cloudfront.net/cdn/fonts/Proxima-Nova.17fa4d5e.woff) format("woff");
 	  font-weight: 300;
 	  font-style: normal;
 	  font-stretch: normal
 }
 
 @font-face {
-	  font-family: Roboto;
+	  font-family: Canela;
 	  font-display: swap;
-	  src: url(https://d6w7wdcyyr51t.cloudfront.net/cdn/fonts/Roboto-Regular-webfont.3e5675c8.woff) format("woff");
-	  font-weight: 400;
+	  src: url(https://d6w7wdcyyr51t.cloudfront.net/cdn/fonts/Canela-Light-Web.32b6bcec.woff2) format("woff2");
+	  font-weight: 300;
 	  font-style: normal;
 	  font-stretch: normal
 }
 
 @font-face {
-	  font-family: Roboto;
+	  font-family: ProximaNova;
 	  font-display: swap;
-	  src: url(https://d6w7wdcyyr51t.cloudfront.net/cdn/fonts/Roboto-Bold-webfont.8b18d65d.woff) format("woff");
+	  src: url(https://d6w7wdcyyr51t.cloudfront.net/cdn/fonts/Proxima-Nova-Black.1deb971a.woff) format("woff");
 	  font-weight: 700;
 	  font-style: normal;
 	  font-stretch: normal
@@ -60,7 +60,7 @@ production stylesheet in assets/built/screen.css
 
 body {
     background: #fff;
-    font-family: Roboto, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif;
+    font-family: ProximaNova, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif;
 }
 
 .img {
@@ -189,7 +189,8 @@ body {
     padding: 0;
     font-size: 5.0rem;
     line-height: 1em;
-    font-weight: 600;
+    font-weight: 700;
+    font-family: Canela;
 }
 
 .site-logo {
@@ -202,7 +203,7 @@ body {
     padding: 5px 0;
     font-size: 2.1rem;
     line-height: 1.4em;
-    font-weight: 400;
+    font-weight: 300;
     opacity: 0.8;
 }
 
@@ -289,31 +290,23 @@ body {
 /* 5. Site Navigation
 /* ---------------------------------------------------------- */
 
-.site-nav-main {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1000;
-    background: color(var(--darkgrey) l(-5%));
-}
-
 .site-nav {
     position: relative;
     z-index: 300;
     overflow-y: hidden;
     font-size: 1.2rem;
-    height: 72px;
+    height: 120px;
 }
 
 .site-nav-top {
     z-index: 100;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     overflow-y: hidden;
     height: 64px;
     font-size: 1.3rem;
+    margin-top: 25px;
 }
 
 .site-nav-left-wrapper {
@@ -356,7 +349,7 @@ body {
     letter-spacing: 0.4px;
     margin-right: 10px;
     padding: 10px 0 80px;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: 0.2px;
     text-transform: uppercase;
     white-space: nowrap;
@@ -398,10 +391,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 42px;
 }
 
-.site-home-header .site-nav-logo {
-    display: none;
-}
-
 .site-nav-content {
     position: relative;
     align-self: flex-start;
@@ -414,7 +403,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0;
     padding: 0;
     list-style: none;
-    transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .nav li {
@@ -429,7 +417,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0;
     padding: 10px 12px;
     opacity: 0.8;
-    transition: opacity 0.35s ease-in-out;
 }
 
 .nav li a:hover {
@@ -446,7 +433,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     height: 1px;
     background: #fff;
     opacity: 0.25;
-    transition: all 0.35s ease-in-out;
 }
 
 .nav li a:hover:before {
@@ -466,7 +452,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     top: 9px;
     color: #fff;
     font-size: 1.7rem;
-    font-weight: 400;
+    font-weight: 300;
     text-transform: none;
     opacity: 0;
     transition: all 1.0s cubic-bezier(0.19, 1, 0.22, 1);
@@ -604,10 +590,6 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 @media (max-width: 700px) {
-    .site-home-header .site-nav {
-        margin-left: -5vw;
-    }
-
     .site-nav-main {
         padding-right: 0;
         padding-left: 0;
@@ -653,7 +635,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-image {
     width: 100%;
-    height: 200px;
+    height: 100%;
     background: var(--lightgrey) no-repeat center center;
 
     object-fit: cover;
@@ -683,9 +665,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-primary-tag {
     margin: 0 0 0.2em;
-    color: var(--blue);
+    color: var(--purple);
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.2px;
     text-transform: uppercase;
 }
@@ -694,6 +676,8 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0 0 0.4em;
     line-height: 1.15em;
     transition: color 0.2s ease-in-out;
+    font-family: Canela;
+    font-size: 3rem;
 }
 
 .no-image .post-card-title {
@@ -710,12 +694,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 25px 25px;
+    padding: 0;
 }
 .post-card-excerpt {
     max-width: 56em;
     color: var(--midgrey);
-    font-family: Georgia, serif;
+    display: none;
 }
 
 .post-card-excerpt p {
@@ -742,7 +726,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .author-list {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 0 0 4px;
+    margin: 0 0 0 6px;
     padding: 0;
     list-style: none;
 }
@@ -837,7 +821,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     color: color(var(--midgrey) l(+10%));
     font-size: 1.2rem;
     line-height: 1.4em;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0.2px;
     text-transform: uppercase;
 }
@@ -848,7 +832,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 
 .post-card-byline-content a {
     color: color(var(--darkgrey) l(+20%));
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .post-card-byline-date {
@@ -868,7 +852,7 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     color: color(var(--midgrey) l(-10%));
     font-size: 1.3rem;
     line-height: 1.4em;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .single-author {
@@ -981,7 +965,6 @@ make sure this only happens on large viewports / desktop-ish devices.
 
 .post-template .site-main,
 .page-template .site-main {
-    margin-top: 64px;
     padding-bottom: 4vw;
     background: #fff;
 }
@@ -1006,20 +989,23 @@ make sure this only happens on large viewports / desktop-ish devices.
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color: var(--midgrey);
+    color: var(--purple);
     font-size: 1.3rem;
     line-height: 1.4em;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
+}
+
+.post-full-tags a {
+    color: var(--purple);
 }
 
 .post-full-meta-date {
     color: var(--lavendar);
-    font-weight: 400;
+    font-weight: 300;
     margin-bottom: 4px;
     color: var(--midgrey);
     font-size: 1.2rem;
-    font-weight: 400;
 }
 
 @media (max-width: 1170px) {
@@ -1044,12 +1030,12 @@ make sure this only happens on large viewports / desktop-ish devices.
 .post-full-title {
     margin: 0 0 0.2em;
     color: color(var(--darkgrey) l(-5%));
+    font-family: Canela;
 }
 
 .post-full-custom-excerpt {
     margin: 20px 0 0;
     color: var(--midgrey);
-    font-family: Georgia, serif;
     font-size: 2.3rem;
     line-height: 1.4em;
     font-weight: 300;
@@ -1093,7 +1079,6 @@ make sure this only happens on large viewports / desktop-ish devices.
     padding: 0 170px 6vw;
     min-height: 230px;
     font-size: 2.2rem;
-    font-family: Georgia, serif;
     line-height: 1.6em;
     background: #fff;
 }
@@ -1265,7 +1250,7 @@ Usage (In Ghost editor):
     padding: 0 5px 2px;
     font-size: 0.8em;
     line-height: 1em;
-    font-weight: 400!important;
+    font-weight: 300!important;
     background: var(--whitegrey);
     border-radius: 3px;
 }
@@ -1335,14 +1320,14 @@ Usage (In Ghost editor):
 .post-full-content h5,
 .post-full-content h6 {
     color: color(var(--darkgrey) l(-5%));
-	  font-family: Roboto, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif
+	  font-family: ProximaNova, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif
 }
 
 .post-full-content h1 {
     margin: 0.5em 0 0.4em;
     font-size: 4.2rem;
     line-height: 1.25em;
-    font-weight: 600;
+    font-weight: 700;
 }
 .post-full-content p + h1 {
     margin-top: 0.8em;
@@ -1358,7 +1343,7 @@ Usage (In Ghost editor):
     margin: 0.5em 0 0.4em;
     font-size: 3.2rem;
     line-height: 1.25em;
-    font-weight: 600;
+    font-weight: 700;
 }
 .post-full-content p + h2 {
     margin-top: 0.8em;
@@ -1375,7 +1360,7 @@ Usage (In Ghost editor):
     margin: 0.5em 0 0.2em;
     font-size: 2.5rem;
     line-height: 1.3em;
-    font-weight: 600;
+    font-weight: 700;
 }
 .post-full-content h2 + h3 {
     margin-top: 0.7em;
@@ -1391,7 +1376,7 @@ Usage (In Ghost editor):
 .post-full-content h4 {
     margin: 0.5em 0 0.2em;
     font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 .post-full-content h2 + h4 {
     margin-top: 0.7em;
@@ -1518,7 +1503,7 @@ Usage (In Ghost editor):
     width: auto;
     border-spacing: 0;
     border-collapse: collapse;
-	  font-family: Roboto, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif;
+	  font-family: ProximaNova, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif;
     font-size: 1.6rem;
     white-space: nowrap;
     vertical-align: top;
@@ -1591,13 +1576,15 @@ Usage (In Ghost editor):
     line-height: 1.2em;
     letter-spacing: 0.2px;
     text-transform: uppercase;;
+    text-align: left;
+    display: block;
 }
 
 .post-full-byline-meta h4 {
     margin: 0 0 3px;
     font-size: 1.3rem;
     line-height: 1.4em;
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .post-full-byline-meta h4 a {
@@ -1610,25 +1597,11 @@ Usage (In Ghost editor):
 
 .post-full-byline-meta .bull {
     display: inline-block;
-    margin: 0 0 0 10px;
-    padding: 0 20px;
-    height: 41px;
     outline: none;
-    color: #fff;
     font-size: 1.5rem;
     line-height: 37px;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
-    background: linear-gradient(
-    color(var(--lavendar) whiteness(+7%)),
-    color(var(--lavendar) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--lavendar) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--lavendar) lightness(-4%) saturation(-10%))
-    );
-    border-radius: 5px;
-    box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
-
     -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -1721,7 +1694,7 @@ Usage (In Ghost editor):
     color: var(--midgrey);
     font-size: 1.2rem;
     line-height: 1;
-    font-weight: 500;
+    font-weight: 300;
     border-radius: 20px;
     transition: all ease 0.2s;
 }
@@ -1762,7 +1735,7 @@ Usage (In Ghost editor):
     display: inline-block;
     color: color(var(--darkgrey) l(+20%));
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -1926,7 +1899,7 @@ Usage (In Ghost editor):
     color: var(--darkgrey);
     font-size: 3.5rem;
     line-height: 1;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .subscribe-form-description {
@@ -1959,7 +1932,7 @@ Usage (In Ghost editor):
     color: var(--midgrey);
     font-size: 1.8rem;
     line-height: 1em;
-    font-weight: normal;
+    font-weight: 300;
     user-select: text;
     border-radius: 5px;
     transition: border-color 0.15s linear;
@@ -1982,7 +1955,7 @@ Usage (In Ghost editor):
     color: #fff;
     font-size: 1.5rem;
     line-height: 39px;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
     background: linear-gradient(
     color(var(--blue) whiteness(+7%)),
@@ -2087,7 +2060,6 @@ Usage (In Ghost editor):
 
 .read-next {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: color(var(--darkgrey) l(-5%));
 }
 
 .read-next-feed {
@@ -2107,12 +2079,11 @@ Usage (In Ghost editor):
 }
 
 .read-next .post-card-primary-tag {
-    color: #fff;
+    color: color(var(--purple));
     opacity: 0.6;
 }
 
 .read-next .post-card-title {
-    color: #fff;
     opacity: 0.8;
     transition: all 0.2s ease-in-out;
 }
@@ -2122,7 +2093,6 @@ Usage (In Ghost editor):
 }
 
 .read-next .post-card-excerpt {
-    color: rgba(255, 255, 255, 0.6);
 }
 
 .read-next .static-avatar {
@@ -2130,11 +2100,9 @@ Usage (In Ghost editor):
 }
 
 .read-next .post-card-byline-content {
-    color: rgba(255, 255, 255, 0.6);
 }
 
 .read-next .post-card-byline-content a {
-    color: rgba(255, 255, 255, 0.8);
 }
 
 .read-next-card {
@@ -2145,8 +2113,9 @@ Usage (In Ghost editor):
     overflow: hidden;
     margin: 0 25px 50px;
     padding: 25px;
-    background: linear-gradient(color(var(--darkgrey) l(+2%)), color(var(--darkgrey) l(-5%)));
+    background: color(var(--purple));
     border-radius: 3px;
+    text-align: center;
 }
 
 .read-next-card a {
@@ -2169,7 +2138,7 @@ Usage (In Ghost editor):
 
 .read-next-card-header h3 a {
     color: #fff;
-    font-weight: 500;
+    font-weight: 300;
     text-decoration: none;
     opacity: 0.8;
 }
@@ -2197,6 +2166,7 @@ Usage (In Ghost editor):
     margin: 0;
     padding: 20px 0;
     border-bottom: rgba(255, 255, 255, 0.1);
+    text-align: left;
 }
 
 .read-next-card-content li:last-of-type {
@@ -2208,7 +2178,7 @@ Usage (In Ghost editor):
     margin: 0;
     font-size: 1.6rem;
     line-height: 1.35em;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .read-next-card-content li a {
@@ -2247,7 +2217,7 @@ Usage (In Ghost editor):
     margin-top: 2px;
     font-size: 1.2rem;
     line-height: 1.4em;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .progress::-webkit-progress-value {
@@ -2300,8 +2270,7 @@ Usage (In Ghost editor):
     .read-next-card {
         flex: 1 1 auto;
         margin: 0 25px;
-        padding: 0;
-        background: none;
+        padding: 25px;
     }
 
     .read-next .post-card {
@@ -2358,7 +2327,7 @@ Usage (In Ghost editor):
 .post-full-content figcaption {
     margin: 1.0em 0 0;
     color: color(var(--midgrey) l(-10%));
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: ProximaNova, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 75%;
     line-height: 1.5em;
     text-align: center;;
@@ -2441,10 +2410,10 @@ Usage (In Ghost editor):
 
 .post-full-content .kg-bookmark-container {
     display: flex;
-	  font-family: Roboto, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif;
+	  font-family: ProximaNova, -apple-system, BlinkMacSystemFont, helvetica neue, helvetica, Ubuntu, segoe ui, arial, sans-serif;
     min-height: 148px;
     color: var(--darkgrey);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: ProximaNova, apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     text-decoration: none;
     border-radius: 3px;
     box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
@@ -2469,7 +2438,7 @@ Usage (In Ghost editor):
     color: color(var(--midgrey) l(-30%));
     font-size: 1.6rem;
     line-height: 1.5em;
-    font-weight: 600;
+    font-weight: 700;
     transition: color 0.2s ease-in-out;
 }
 
@@ -2485,7 +2454,7 @@ Usage (In Ghost editor):
     color: color(var(--midgrey) l(-10%));
     font-size: 1.5rem;
     line-height: 1.5em;
-    font-weight: 400;
+    font-weight: 300;
 
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -2515,7 +2484,7 @@ Usage (In Ghost editor):
     margin-top: 14px;
     color: color(var(--midgrey) l(-10%));
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .post-full-content .kg-bookmark-icon {
@@ -2633,7 +2602,7 @@ Usage (In Ghost editor):
     max-width: 46em;
     font-size: 2.0rem;
     line-height: 1.4em;
-    font-weight: 400;
+    font-weight: 300;
     opacity: 0.8;
 }
 
@@ -2644,7 +2613,7 @@ Usage (In Ghost editor):
     align-items: center;
     margin: 0 0 0 1px;
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 0.2px;
     text-transform: uppercase;
 }
@@ -2665,7 +2634,7 @@ Usage (In Ghost editor):
 
 .author-social-link a {
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .no-image .author-social-link a {
@@ -2778,7 +2747,7 @@ Usage (In Ghost editor):
     color: var(--midgrey);
     font-size: 3rem;
     line-height: 1.3em;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .error-link {
@@ -2972,7 +2941,7 @@ Usage (In Ghost editor):
     color: var(--midgrey);
     font-size: 2rem;
     line-height: 1em;
-    font-weight: normal;
+    font-weight: 300;
     letter-spacing: 0.5px;
     user-select: text;
     border-radius: 8px;
@@ -2995,7 +2964,7 @@ Usage (In Ghost editor):
     color: #fff;
     font-size: 1.7rem;
     line-height: 38px;
-    font-weight: 400;
+    font-weight: 300;
     text-align: center;
     background: linear-gradient(
     color(var(--lavendar) whiteness(+7%)),
