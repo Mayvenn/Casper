@@ -1689,13 +1689,10 @@ Usage (In Ghost editor):
 
 .author-avatar {
     display: block;
-    padding: 9px 16px;
-    border: color(var(--midgrey) l(+20%)) 1px solid;
     color: var(--midgrey);
     font-size: 1.2rem;
     line-height: 1;
     font-weight: 300;
-    border-radius: 20px;
     transition: all ease 0.2s;
 }
 
@@ -2184,7 +2181,6 @@ Usage (In Ghost editor):
 .read-next-card-content li a {
     display: block;
     color: #fff;
-    opacity: 0.8;
 }
 
 .read-next-card-content li a:hover {
@@ -3048,6 +3044,7 @@ Usage (In Ghost editor):
 
 /* 12. Dark Mode
 /* ---------------------------------------------------------- */
+/* Disabling until we actually support it
 @media (prefers-color-scheme: dark) {
     body {
         color: rgba(255, 255, 255, 0.75);
@@ -3266,3 +3263,4 @@ Usage (In Ghost editor):
         color: color(var(--green) l(+5%) s(-5%));
     }
 }
+*/
