@@ -41,7 +41,7 @@ into the {body} of the default.hbs template --}}
 
                                 <div class="author-card">
                                     {{#if profile_image}}
-                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" data-pagespeed-no-defer />
                                     {{else}}
                                     <div class="author-profile-image">{{> "icons/avatar"}}</div>
                                     {{/if}}
@@ -61,7 +61,7 @@ into the {body} of the default.hbs template --}}
 
                                 {{#if profile_image}}
                                 <a href="{{url}}" class="author-avatar">
-                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" data-pagespeed-no-defer />
                                 </a>
                                 {{else}}
                                 <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
@@ -99,6 +99,7 @@ into the {body} of the default.hbs template --}}
                             2000px"
                     src="{{img_url feature_image size="xl"}}"
                     alt="{{title}}"
+                    data-pagespeed-no-defer
                 />
             </figure>
             {{/if}}
